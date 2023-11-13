@@ -1,0 +1,19 @@
+### Sample Hello World endpoint
+{{host}}/hello
+Content-Type: text/html
+
+
+### OpenAPI endpoint
+{{host}}/openapi
+Content-Type: application/yaml
+
+
+### Secured - permit all (get infos) | no token
+{{host}}/secured/permit-all
+Content-Type: application/yaml
+
+
+### Secured - permit all (get infos) | with token
+{{host}}/secured/permit-all
+Content-Type: application/yaml
+Authorization: Bearer {{token}}
