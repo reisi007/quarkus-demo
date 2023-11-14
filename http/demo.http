@@ -17,3 +17,13 @@ Content-Type: application/yaml
 {{host}}/secured/permit-all
 Content-Type: application/yaml
 Authorization: Bearer {{token}}
+
+
+### Fetch token
+// ´The token is stored in memory only....
+POST {{host}}/local/token
+Content-Type: text/plain
+
+> {%
+    client.global.set("token", response.body.toString())
+%}

@@ -35,6 +35,7 @@ dependencies {
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:kotlin-extensions")
     testImplementation("org.testcontainers:mariadb")
+    testImplementation("com.willowtreeapps.assertk:assertk:0.27.0")
 }
 
 group = "pictures.reisinger.demo"
@@ -65,10 +66,4 @@ idea {
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
     kotlinOptions.javaParameters = true
-}
-
-task<JavaExec>("generateToken") {
-    mainClass = "pictures.reisinger.demo.GenerateTokenKt"
-    classpath = sourceSets["test"].runtimeClasspath
-    systemProperty("smallrye.jwt.sign.key.location", "privateKey.pem")
 }

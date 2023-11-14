@@ -4,20 +4,13 @@
 
 ### DB
 
-Local MariaDB database uses port 3306 with user `root` and password `test`. The data is persisted....
+Local MariaDB database uses port 3306 with user `root` and password `test`. The data is persisted in the testcontainer
+folder in the root of the project. **Note:** Docker environment needs to be present for Testcontainer to work!
 
 ### JWT
 
-For local development you can create a `http-client.private.env.json` in the root folder. The token is created using
-the [following file](src/test/kotlin/pictures/reisinger/demo/GenerateToken.kt) in the test folder.
-
-````json
-{
-  "dev": {
-    "token": "<TOKEN>"
-  }
-}
-````
+For local development you can create a `http-client.private.env.json` in the root folder. The token locally is created
+using a POST request [see this file](./http/demo.http)
 
 ### Useful links
 
