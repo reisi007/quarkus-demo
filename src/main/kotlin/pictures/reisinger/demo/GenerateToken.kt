@@ -1,5 +1,6 @@
 package pictures.reisinger.demo
 
+import io.quarkus.arc.profile.IfBuildProfile
 import io.smallrye.jwt.build.Jwt
 import jakarta.ws.rs.POST
 import jakarta.ws.rs.Path
@@ -7,7 +8,7 @@ import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import java.time.Duration
 
-@LocalOnly
+@IfBuildProfile("dev")
 @Path("/local")
 class GenerateTokenResource {
 
